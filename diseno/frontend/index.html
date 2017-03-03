@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Agenda</title>
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="./style.css">
+	
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+    <div class="container">
+		
+      <div class="divTable" ng-controller="agenda">
+		<div class="divTableBody">
+			<div class="divTableRow header">
+				<div class="divTableCell text-center"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+				<div class="divTableCell text-center">Lunes</div>
+				<div class="divTableCell text-center">Martes</div>
+				<div class="divTableCell text-center">Miercoles</div>
+				<div class="divTableCell text-center">Jueves</div>
+				<div class="divTableCell text-center">Viernes</div>
+				<div class="divTableCell text-center">Sábado</div>
+				<div class="divTableCell text-center">Domingo</div>
+				<div class="divTableCell text-center"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
+			</div>
+			
+			<div ng-repeat="linea in bloques" class="divTableRow">
+				<div class="divTableCell horas text-center">{{linea.hora}}</div>
+				<div class="divTableCell {{linea.lunes.clase}}"><span ng-class="{'glyphicon glyphicon-calendar':linea.lunes.clase}" aria-hidden="true"></span> {{linea.lunes.texto}}</div>
+				<div class="divTableCell {{linea.martes.clase}}"><span ng-class="{'glyphicon glyphicon-calendar':linea.martes.clase}" aria-hidden="true"></span> {{linea.martes.texto}}</div>
+				<div class="divTableCell {{linea.miercoles.clase}}"><span ng-class="{'glyphicon glyphicon-calendar':linea.miercoles.clase}" aria-hidden="true"></span> {{linea.miercoles.texto}}</div>
+				<div class="divTableCell {{linea.jueves.clase}}"><span ng-class="{'glyphicon glyphicon-calendar':linea.jueves.clase}" aria-hidden="true"></span> {{linea.jueves.texto}}</div>
+				<div class="divTableCell {{linea.viernes.clase}}"><span ng-class="{'glyphicon glyphicon-calendar':linea.viernes.clase}" aria-hidden="true"></span> {{linea.viernes.texto}}</div>
+				<div class="divTableCell {{linea.sabado.clase}}"><span ng-class="{'glyphicon glyphicon-calendar':linea.sabado.clase}" aria-hidden="true"></span> {{linea.sabado.texto}}</div>
+				<div class="divTableCell {{linea.domingo.clase}}"><span ng-class="{'glyphicon glyphicon-calendar':linea.domingo.clase}" aria-hidden="true"></span> {{linea.domingo.texto}}</div>
+				<div class="divTableCell horas text-center">{{linea.hora}}</div>
+			</div>
+		
+		</div>
+	</div>
+
+
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+	<!-- Angularjs -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+	
+	<script src="./app.js"></script>
+  </body>
+</html>
